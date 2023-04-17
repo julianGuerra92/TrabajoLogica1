@@ -5,6 +5,9 @@ public class Vendedor {
     private char sexo;
     private float totalVentas;
 
+    public Vendedor() {
+    }
+
     public Vendedor(String pCodigo, String pNombre, char pSexo, float pTotalVentas) {
         codigo = pCodigo;
         nombre = pNombre;
@@ -42,5 +45,15 @@ public class Vendedor {
 
     public void setTotalVentas(float totalVentas) {
         this.totalVentas = totalVentas;
+    }
+
+    @Override
+    public String toString() {
+        return "Vendedor{" +
+                "codigo='" + codigo + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", sexo=" + sexo +
+                ", totalVentas=" + totalVentas +
+                '}';
     }
 }

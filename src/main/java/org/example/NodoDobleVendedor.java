@@ -4,6 +4,9 @@ public class NodoDobleVendedor {
     private Vendedor vendedor;
     private NodoDobleVendedor li, ld;
 
+    public NodoDobleVendedor() {
+    }
+
     public NodoDobleVendedor(Vendedor pVendedor) {
         vendedor = pVendedor;
         li = ld = null;
