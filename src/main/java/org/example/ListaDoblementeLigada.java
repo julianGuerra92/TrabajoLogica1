@@ -12,11 +12,11 @@ public class ListaDoblementeLigada {
         totalNodes = 0;
     }
 
-    public NodoDobleVendedor findByCode(String code) {
+    public NodoDobleVendedor findByCode(String aCode) {
         nodeFound = null;
         iterator = head.getLd();
         while (iterator != null && nodeFound == null) {
-            if (iterator.getVendedor().getCodigo().equals(code)) {
+            if (iterator.getVendedor().getCode().equals(aCode)) {
                 nodeFound = iterator;
             } else {
                 iterator = iterator.getLd();
@@ -36,6 +36,7 @@ public class ListaDoblementeLigada {
     }
 
     public String removeByCode(String code) {
+        nodeFound = findByCode(code);
         if (nodeFound == last) {
             nodeFound.getLi().setLd(null);
             last = nodeFound.getLi();
@@ -68,7 +69,7 @@ public class ListaDoblementeLigada {
         float totalSale = 0f;
         Vendedor seller = traverseRight();
         while (seller != null) {
-            totalSale += seller.getTotalVentas();
+            totalSale += seller.getTotalSales();
             seller = traverseRight();
         }
         return String.format("%,.2f", (totalSale / totalNodes));
@@ -78,8 +79,8 @@ public class ListaDoblementeLigada {
         sellerFound = null;
         Vendedor seller = traverseRight();
         while (seller != null) {
-            if (seller.getSexo() == gender) {
-                if (sellerFound == null || (seller.getTotalVentas() > sellerFound.getTotalVentas())) {
+            if (seller.getSex() == gender) {
+                if (sellerFound == null || (seller.getTotalSales() > sellerFound.getTotalSales())) {
                     sellerFound = seller;
                 }
             }
@@ -92,8 +93,8 @@ public class ListaDoblementeLigada {
         sellerFound = null;
         Vendedor seller = traverseRight();
         while (seller != null) {
-            if (seller.getSexo() == gender) {
-                if (sellerFound == null || (seller.getTotalVentas() < sellerFound.getTotalVentas())) {
+            if (seller.getSex() == gender) {
+                if (sellerFound == null || (seller.getTotalSales() < sellerFound.getTotalSales())) {
                     sellerFound = seller;
                 }
             }
@@ -106,7 +107,7 @@ public class ListaDoblementeLigada {
         int counter = 0;
         Vendedor seller = traverseRight();
         while (seller != null) {
-            if (seller.getSexo() == gender) {
+            if (seller.getSex() == gender) {
                 counter++;
             }
             seller = traverseRight();

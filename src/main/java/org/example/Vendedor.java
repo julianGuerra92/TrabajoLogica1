@@ -1,59 +1,59 @@
 package org.example;
 
 public class Vendedor {
-    private String codigo, nombre;
-    private char sexo;
-    private float totalVentas;
+    private String code, name;
+    private char sex;
+    private float totalSales;
 
     public Vendedor() {
     }
 
-    public Vendedor(String pCodigo, String pNombre, char pSexo, float pTotalVentas) {
-        codigo = pCodigo;
-        nombre = pNombre;
-        sexo = pSexo;
-        totalVentas = pTotalVentas;
+    public Vendedor(String pCode, String pName, char pSex, float pTotalSales) {
+        code = pCode;
+        name = pName;
+        sex = pSex;
+        totalSales = pTotalSales;
     }
 
-    public String getCodigo() {
-        return codigo;
+    public String getCode() {
+        return code;
     }
 
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
+    public void setCode(String code) {
+        this.code = code;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public char getSexo() {
-        return sexo;
+    public char getSex() {
+        return sex;
     }
 
-    public void setSexo(char sexo) {
-        this.sexo = sexo;
+    public void setSex(char sex) {
+        this.sex = sex;
     }
 
-    public float getTotalVentas() {
-        return totalVentas;
+    public float getTotalSales() {
+        return totalSales;
     }
 
-    public void setTotalVentas(float totalVentas) {
-        this.totalVentas = totalVentas;
+    public void setTotalSales(float totalSales) {
+        this.totalSales = totalSales;
     }
 
     @Override
     public String toString() {
         return "Vendedor{" +
-                "codigo='" + codigo + '\'' +
-                ", nombre='" + nombre + '\'' +
-                ", sexo=" + sexo +
-                ", totalVentas=" + totalVentas +
+                "codigo='" + code + '\'' +
+                ", nombre='" + name + '\'' +
+                ", sexo=" + sex +
+                ", totalVentas=" + totalSales +
                 '}';
     }
 }
