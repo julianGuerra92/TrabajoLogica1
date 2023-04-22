@@ -23,14 +23,20 @@ public class Main {
                     System.out.println("---> Ingrese información del vendedor: ");
                     System.out.print("\t\t Código: ");
                     code = lector.nextLine();
-                    System.out.print("\t\t Nombre: ");
-                    name = lector.nextLine();
-                    System.out.print("\t\t Sexo (f o m): ");
-                    sex = lector.next().charAt(0);
-                    System.out.print("\t\t Ventas totales: ");
-                    totalSales = lector.nextFloat();
-                    lector.nextLine();
-                    System.out.println(sellerList.add(new Vendedor(code, name, sex, totalSales)));
+                    if(sellerList.findByCode(code) == null){
+                        System.out.print("\t\t Nombre: ");
+                        name = lector.nextLine();
+                        System.out.print("\t\t Sexo (f o m): ");
+                        sex = lector.next().charAt(0);
+                        System.out.print("\t\t Ventas totales: ");
+                        totalSales = lector.nextFloat();
+                        lector.nextLine();
+                        System.out.println(sellerList.add(new Vendedor(code, name, sex, totalSales)));
+                    }
+                    else {
+                        System.out.println("EL vendedor con el código "+code+" ya está creado.");
+                    }
+
                     break;
                 case '2':
                     System.out.print("---> Ingrese el código del vendedor: ");
